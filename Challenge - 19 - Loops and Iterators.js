@@ -1,4 +1,4 @@
-/* Use a variety of different solutions to find the largest number in an array. 
+/** Use a variety of different solutions to find the largest number in an array. 
 Use a while loop, a do..while loop, a for loop, and a forEach loop. 
 Use the following array for each of these loops:
 
@@ -26,7 +26,7 @@ Using the .sort function, sort the following array reverse-alphabetically:
 
 */
 
-//while loop
+//WHILE LOOP
 var array = [2, 7, 4, 8, 6, 4];
 var largest = 0;
 var i = 0;
@@ -40,6 +40,95 @@ while (i < array.length) {
 
 console.log(largest);
 
-//
+////////////////////////////////////////////////////////////////////////////////
+
+
+//DO...WHILE LOOP
+
+//?
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+//FOR LOOP
+
+var array = [2, 7, 4, 8, 6, 4];
+var largest = 0;
+
+for (i = 0; i < array.length; i++) {
+    if (array[i] > largest) {
+        largest = array[i];
+    }
+}
+console.log(largest);
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+//FOR EACH LOOP
+//?
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+//FOR IN LOOP
+var text = "";
+var car = { "wheels": 3, "horsepower": 600, "decal": "flames", "awesome": true , "holdsBarred": [] };
+
+
+for (var i in car)
+{
+	text = text + car[i];
+}
+
+console.log(text);
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+// .MAP() METHOD
+
+var numbers = [1, 2, 5, 7, 11];
+var square = numbers.map(function(num) {
+  return num * num;
+});
+
+console.log(square);
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+// .FILTER() METHOD
+
+function isOdd(num) { 
+  return num % 2;
+}
+var filtered = [1, 22, 35, 2, 4, 7, 9].filter(isOdd);
+console.log(filtered);
+// → filtered is [1, 35, 7, 9]
+
+////////////////////////////////////////////////////////////////////////////////
+
+// .SORT() METHOD
+
+var things = ['water', 'balloon', 'baseball', 'computer', 'notebook', 'frisbee'];
+
+things.sort(function(a, b) {
+    if(a > b) {
+        return -1;
+    }
+    else if(a < b) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+});
+
+console.log(things);
+
+// → ["water", "notebook", "frisbee", "computer", "baseball", "balloon"]
+
+
 
 
