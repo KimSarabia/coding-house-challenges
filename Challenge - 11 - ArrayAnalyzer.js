@@ -12,25 +12,26 @@
 //(3) INCLUDING NEGATIVE NUMBERS
 
 //ODD COUNT
-var a = [/*ARRAY GOES HERE*/];
-function countOdds(arr)
-{
+
+var arrayAnalyzer = function() { 
+var arr = [7, -3, 0, 12, 44, -5, 3];
+var container = [];
+
+for(var i=0; i < arr.length; i++) {
+
+var isOdd = function(arr) {
   var oddCount = 0;
-  for(var i = 0; i < arr.length; i++)
-  {
-    if(arr[i] % 2 == 1) // if it's odd
-      oddCount++;        // increment the counter
-  }
-  return oddCount;
+  for(var i = 0; i < arr.length; i++) {
+   if (Math.abs(arr[i] % 2) == 1)
+    oddCount++;
 }
-
-console.log(countOdds(a));
-
+  return oddCount;
+  
+};
 
 //NEGATIVE COUNT
 
-var a = [/*ARRAY GOES HERE*/];
-function negativeNumber(arr)
+var negativeNumber = function(arr)
 {
   var negCount = 0;
   for(var i = 0; i < arr.length; i++)
@@ -39,22 +40,19 @@ function negativeNumber(arr)
       negCount++;        // increment the counter
   }
   return negCount;
-}
+};
 
-console.log(negativeNumber(a));
 
 //AVERAGE OF ALL INTEGERS
 
-var arr = [7, -3, 0, 12, 44, -5, 3];
 var sum = arr.reduce(function(a, b) { return a + b; });
 var avg = sum / arr.length;
 var rounded = Math.round(avg * 100) / 100;
-console.log(rounded);
 
 //MEDIAN OF ALL INTEGERS
 
 
-function median(arr) {
+var median = function(arr) {
 
     arr.sort( function(a,b) {return a - b;} );
 
@@ -64,5 +62,16 @@ function median(arr) {
         return arr[half];
     else
         return (arr[half-1] + arr[half]) / 2;
+};
+
+container.push(isOdd);
+container.push(negativeNumber);
+container.push(rounded);
+container.push(median);
+
 }
 
+return container;
+
+    }; 
+console.log(arrayAnalyzer());
