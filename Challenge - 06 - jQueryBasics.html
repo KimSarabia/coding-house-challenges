@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+body {
+    background-color: black;
+    color: white;
+}
+
+
+
+p{
+  color:white;  
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+</style>
+<body>
+
+<p>This is an ordinary paragraph. This is text. The default text color for a page is defined in the body selector.</p>
+
+<button class="button">Button</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $(".button").on('click', function(){
+
+        var currentColor = $("body").css("backgroundColor");
+        var newColor;
+
+        if (currentColor === 'rgb(0, 0, 0)') {
+            //alert('This Works!')
+            newColor = 'white';
+        } else {
+            newColor = 'black';
+        }
+
+        $("body").css({
+            backgroundColor: newColor,
+        });
+
+
+        var textColor = $("p").css("color");
+        var newTextColor;
+
+        if (textColor === 'rgb(255, 255, 255)') {
+            newTextColor = 'black';
+        } else {
+            newTextColor = 'white';
+        }
+
+        $("p").css({
+            color: newTextColor
+
+        });
+
+
+    });
+
+});
+</script>
+
+</body>
+</html>
